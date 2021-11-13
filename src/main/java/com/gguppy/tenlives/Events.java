@@ -21,7 +21,7 @@ public class Events implements Listener {
     public void onPlayerJoin(PlayerJoinEvent e) {
         try {
             Player p = e.getPlayer();
-            File f = new File(TenLives.getPlugin().getDataFolder().getAbsolutePath(), p.getUniqueId() + ".yml");
+            File f = new File(TenLives.getPlugin().getDataFolder().getAbsolutePath() + "/userdata/", p.getUniqueId() + ".yml");
             FileConfiguration c = YamlConfiguration.loadConfiguration(f);
             if(!f.exists()){
                 c.set("deaths", 1);
@@ -38,7 +38,7 @@ public class Events implements Listener {
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent e) throws IOException {
         Player p = e.getEntity().getPlayer();
-        File f = new File(TenLives.getPlugin().getDataFolder().getAbsolutePath(), p.getUniqueId() + ".yml");
+        File f = new File(TenLives.getPlugin().getDataFolder().getAbsolutePath() + "/userdata/", p.getUniqueId() + ".yml");
         FileConfiguration c = YamlConfiguration.loadConfiguration(f);
         int deaths = c.getInt("deaths");
         deaths++;
@@ -71,7 +71,7 @@ public class Events implements Listener {
     @EventHandler
     public void onRespawn(PlayerRespawnEvent e){
         Player p = e.getPlayer();
-        File f = new File(TenLives.getPlugin().getDataFolder().getAbsolutePath(), p.getUniqueId() + ".yml");
+        File f = new File(TenLives.getPlugin().getDataFolder().getAbsolutePath() + "/userdata/", p.getUniqueId() + ".yml");
         FileConfiguration c = YamlConfiguration.loadConfiguration(f);
         int deaths = c.getInt("deaths");
         int lives = 11 - deaths;
