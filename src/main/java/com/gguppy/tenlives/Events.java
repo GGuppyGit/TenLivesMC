@@ -30,9 +30,9 @@ public class Events implements Listener {
             }
 
         } catch (IOException err){
-            System.out.println("IOException. Report this.");
+            System.out.println("TenLives IOException. Report this.");
         }
-
+        
     }
 
     @EventHandler
