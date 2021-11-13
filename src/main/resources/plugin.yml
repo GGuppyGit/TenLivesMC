@@ -1,0 +1,6 @@
+name: TenLives
+version: '${project.version}'
+main: com.gguppy.tenlives.TenLives
+api-version: 1.17
+authors: [ GGuppy ]
+description: Made for zeanna#6073
