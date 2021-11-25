@@ -1,6 +1,6 @@
-name: TenLives
+name: XLives
 version: '${project.version}'
-main: com.gguppy.tenlives.TenLives
+main: com.gguppy.tenlives.XLives
 api-version: 1.17
 authors: [ GGuppy ]
 description: Made for zeanna#6073
