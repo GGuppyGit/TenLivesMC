@@ -47,7 +47,7 @@ public class Events implements Listener {
             ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
 
             for(int i = 0; i < XLives.maxVaults; i++){
-                String command = "pv reset " + i + " " + p.getName();
+                String command = "pvdel " + p.getName() + " " + i;
                 Bukkit.dispatchCommand(console, command);
 
             }
@@ -67,6 +67,7 @@ public class Events implements Listener {
             c.save(f);
             p.spigot().respawn();
             p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 3, 2));
+            Bukkit.getServer().broadcastMessage(XLives.colorFormat("&4&l" + p.getName() + "&c has been banned! &4&l0 &clives left."));
             if(XLives.banPlayers) Bukkit.dispatchCommand(console, "tempban " + p.getName() + " 1d " + XLives.colorFormat("&4&lYou're out of lives!"));
 
         } else {
